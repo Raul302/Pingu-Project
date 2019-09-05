@@ -21,4 +21,4 @@
   <a href="https://app.saucelabs.com/builds/50f8372d79f743a3b25fb6ca4851ca4c"><img src="https://app.saucelabs.com/buildstatus/vuejs" alt="Build Status"></a>
 </p>
 
-<h2 align="center">Supporting Vue.js</h2>
+<h2 align="center"> Vue.js</h2>
