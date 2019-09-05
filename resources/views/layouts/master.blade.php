@@ -8,6 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <title>AdminLTE 3 | Starter</title>
 
@@ -19,8 +20,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini">
-<div class="wrapper">
-
+<div class="wrapper" id="app">
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
@@ -28,7 +28,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
-     
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index3.html" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Contact</a>
+      </li>
     </ul>
 
     <!-- SEARCH FORM -->
@@ -165,13 +170,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                <li class="nav-item">
-                <a href="#" class="nav-link">
+                <router-link to="/dashboard" class="nav-link">
                   <i class="nav-icon fas fa-th"></i>
                   <p>
                     Dashboard
                     {{-- <span class="right badge badge-danger">New</span> --}}
                   </p>
-                </a>
+                </router-link>
               </li>
 
                 
@@ -194,13 +199,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <router-link to="/profile" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <p>
                 Profile
                 {{-- <span class="right badge badge-danger">New</span> --}}
               </p>
-            </a>
+            </router-link>
           </li>
 
           <li class="nav-item">
@@ -227,6 +232,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
+          <router-view></router-view>
         <div class="row">
         
           <!-- /.col-md-6 -->
@@ -270,5 +276,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Bootstrap 4 -->
 <!-- AdminLTE App -->
 <script src="{{asset('js/adminlte.min.js')}}"></script>
+<script src="{{asset('js/app.js')}}"></script>
 </body>
 </html>
