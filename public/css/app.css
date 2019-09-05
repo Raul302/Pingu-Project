@@ -10644,8 +10644,3 @@ a.text-dark:focus {
   }
 }
 
-.router-link-exact-active {
-  background-color: blue;
-  color: white;
-}
-
