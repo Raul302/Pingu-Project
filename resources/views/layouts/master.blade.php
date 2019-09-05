@@ -28,12 +28,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
+     
     </ul>
 
     <!-- SEARCH FORM -->
@@ -171,7 +166,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                with font-awesome or any other icon font library -->
                <li class="nav-item">
                 <router-link to="/dashboard" class="nav-link">
-                  <i class="nav-icon fas fa-th"></i>
+                  <i class="nav-icon fas fa-th"style="color:blue;"></i>
                   <p>
                     Dashboard
                     {{-- <span class="right badge badge-danger">New</span> --}}
@@ -183,7 +178,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link ">
-              <i class="nav-icon fas fa-cog"></i>
+              <i class="nav-icon fas fa-cog"style="color:green;"></i>
               <p>
                 Managment
                 <i class="right fas fa-angle-left"></i>
@@ -200,23 +195,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
           <li class="nav-item">
             <router-link to="/profile" class="nav-link">
-              <i class="nav-icon fas fa-user"></i>
+              <i class="nav-icon fas fa-user"style="color:orange;"></i>
               <p>
                 Profile
                 {{-- <span class="right badge badge-danger">New</span> --}}
               </p>
             </router-link>
           </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-power-off"></i>
-              <p>
-                Logout
-                {{-- <span class="right badge badge-danger">New</span> --}}
-              </p>
-            </a>
-          </li>
+          <div class="nav-item">
+                <a class="nav-link" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                   
+                <i class="nav-icon fas fa-power-off"style="color:red;"></i>
+                          <p>
+                                {{ __('Logout') }}
+                            {{-- <span class="right badge badge-danger">New</span> --}}
+                          </p>    
+                        </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </div>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -258,10 +258,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
-      Anything you want
+    V1.0
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2014-2019 Pingu--force</strong> All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->
