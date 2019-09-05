@@ -10,7 +10,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>Panel</title>
+  <title>Admin</title>
 
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/a2a999c481.js"></script>
