@@ -53,6 +53,9 @@
             <!-- /.card -->
           </div>
         </div>
+
+        <form @submit.prevent="Createuser">
+
                   <!-- Modal -->
           <div class="modal fade" id="addNew" tabindex="-1" role="dialog" aria-labelledby="addNewLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -111,10 +114,10 @@
                   <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                   <button type="button" class="btn btn-primary">Create</button>
                 </div>
+                </form>
               </div>
             </div>
           </div>
-
   </div>
 </template>
 
@@ -130,6 +133,11 @@
             bio:'',
             photo:''
           })
+        }
+      },
+      methods :{
+        Createuser(){
+          this.form.post('api/user')
         }
       },
         mounted() {
