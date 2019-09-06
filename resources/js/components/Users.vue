@@ -68,28 +68,28 @@
                   <div class="form-group">
                     <input v-model="form.name" type="text" name="name"
                     placeholder="name"
-                    class="form-control" :class="{ 'is invalid': form.errors.has('name')}">
+                    class="form-control" :class="{ 'is-invalid': form.errors.has('name') }">
                     <has-error :form="form" field="name"></has-error>
                   </div>
                   
                   <div class="form-group">
                     <input v-model="form.email" type="email" name="email"
                     placeholder="Email Address"
-                    class="form-control" :class="{ 'is invalid': form.errors.has('email')}">
+                    class="form-control" :class="{ 'is-invalid': form.errors.has('email')}">
                     <has-error :form="form" field="email"></has-error>
                   </div>
 
                   <div class="form-group">
                     <textarea v-model="form.bio" id="bio" name="bio"
                     placeholder="bio for user(optional)"
-                    class="form-control" :class="{ 'is invalid': form.errors.has('bio')}"></textarea>
+                    class="form-control" :class="{ 'is-invalid': form.errors.has('bio')}"></textarea>
                     <has-error :form="form" field="bio"></has-error>
                   </div>
 
                   <div class="form-group">
                     <select v-model="form.type" id="type" name="type"
                     placeholder="type for user(optional)"
-                    class="form-control" :class="{ 'is invalid': form.errors.has('type')}">
+                    class="form-control" :class="{ 'is-invalid': form.errors.has('type')}">
                     <option value="" disabled >Select User role</option>
                     <option value="admin">admin</option>
                     <option value="user">Standar user</option>
@@ -101,7 +101,7 @@
                     <div class="form-group">
                     <input v-model="form.password" type="password" name="password" id="password"
                     placeholder="password"
-                    class="form-control" :class="{ 'is invalid': form.errors.has('password')}">
+                    class="form-control" :class="{ 'is-invalid': form.errors.has('password')}">
                     <has-error :form="form" field="password"></has-error>
                   </div>
                 </div>

@@ -38448,7 +38448,7 @@ var render = function() {
                             }
                           ],
                           staticClass: "form-control",
-                          class: { "is invalid": _vm.form.errors.has("name") },
+                          class: { "is-invalid": _vm.form.errors.has("name") },
                           attrs: {
                             type: "text",
                             name: "name",
@@ -38486,7 +38486,7 @@ var render = function() {
                             }
                           ],
                           staticClass: "form-control",
-                          class: { "is invalid": _vm.form.errors.has("email") },
+                          class: { "is-invalid": _vm.form.errors.has("email") },
                           attrs: {
                             type: "email",
                             name: "email",
@@ -38524,7 +38524,7 @@ var render = function() {
                             }
                           ],
                           staticClass: "form-control",
-                          class: { "is invalid": _vm.form.errors.has("bio") },
+                          class: { "is-invalid": _vm.form.errors.has("bio") },
                           attrs: {
                             id: "bio",
                             name: "bio",
@@ -38565,7 +38565,7 @@ var render = function() {
                             ],
                             staticClass: "form-control",
                             class: {
-                              "is invalid": _vm.form.errors.has("type")
+                              "is-invalid": _vm.form.errors.has("type")
                             },
                             attrs: {
                               id: "type",
@@ -38635,7 +38635,7 @@ var render = function() {
                           ],
                           staticClass: "form-control",
                           class: {
-                            "is invalid": _vm.form.errors.has("password")
+                            "is-invalid": _vm.form.errors.has("password")
                           },
                           attrs: {
                             type: "password",
