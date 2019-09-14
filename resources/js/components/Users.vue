@@ -60,8 +60,8 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 v-show="!editmode"class="modal-title" id="addNewLabel">Add New</h5>
-                  <h5 v-show="editmode"class="modal-title" id="addNewLabel">Edit</h5>
+                  <h5 v-show="!editmode" class="modal-title" id="addNewLabel">Add New</h5>
+                  <h5 v-show="editmode" class="modal-title" id="addNewLabel">Edit</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -127,6 +127,7 @@
           editmode:false,
           users:{},
           form: new Form({
+            id:'',
             name:'',
             email:'',
             password:'',
@@ -139,7 +140,22 @@
       methods: {
         updateUser()
         {
+         this.$Progress.start();
+          this.form.put('api/user/'+this.form.id).then(()=>{
+            
+                      $('#addNew').modal('hide');
+                      toast.fire({
+                        type: 'success',
+                        title: 'Your information has been updated'
+                      })  
+              this.$Progress.finish();
+              Fire.$emit('AfterCreate');
+  
 
+          }).catch(()=>{
+                      this.$Progress.fail();
+
+          });
         },
         newModal(){
           this.editmode= false;
