@@ -1931,6 +1931,16 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    newModal: function newModal() {
+      this.form.reset();
+      $('#addNew').modal('show');
+    },
+    editModal: function editModal(user) {
+      this.form.reset();
+      $('#addNew').modal('show');
+      $('#addNew').title('show');
+      this.form.fill(user);
+    },
     loadUsers: function loadUsers() {
       var _this = this;
 
@@ -58969,11 +58979,24 @@ var render = function() {
     _c("div", { staticClass: "row " }, [
       _c("div", { staticClass: "col-md-12" }, [
         _c("div", { staticClass: "card mt-5" }, [
-          _vm._m(0),
+          _c("div", { staticClass: "card-header" }, [
+            _c("h3", { staticClass: "card-title" }, [_vm._v("Users table")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-tools" }, [
+              _c(
+                "button",
+                { staticClass: "btn btn-success", on: { click: _vm.newModal } },
+                [
+                  _vm._v("\n                  Add new\n                  "),
+                  _c("i", { staticClass: "fas fa-user-plus" })
+                ]
+              )
+            ])
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "card-body table-responsive p-0" }, [
             _c("table", { staticClass: "table table-hover" }, [
-              _vm._m(1),
+              _vm._m(0),
               _vm._v(" "),
               _c(
                 "tbody",
@@ -58992,7 +59015,18 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("td", [
-                      _vm._m(2, true),
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              return _vm.editModal(user)
+                            }
+                          }
+                        },
+                        [_c("i", { staticClass: "fa fa-edit" })]
+                      ),
                       _vm._v(" "),
                       _c(
                         "a",
@@ -59044,7 +59078,7 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "modal-content" }, [
-              _vm._m(3),
+              _vm._m(1),
               _vm._v(" "),
               _c(
                 "form",
@@ -59290,7 +59324,7 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _vm._m(4)
+                  _vm._m(2)
                 ]
               )
             ])
@@ -59301,28 +59335,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-header" }, [
-      _c("h3", { staticClass: "card-title" }, [_vm._v("Users table")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card-tools" }, [
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-success",
-            attrs: { "data-toggle": "modal", "data-target": "#addNew" }
-          },
-          [
-            _vm._v("\n                  Add new\n                  "),
-            _c("i", { staticClass: "fas fa-user-plus" })
-          ]
-        )
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -59341,14 +59353,6 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Modify")])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "#" } }, [
-      _c("i", { staticClass: "fa fa-edit" })
     ])
   },
   function() {

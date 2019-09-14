@@ -7,7 +7,7 @@
                 <h3 class="card-title">Users table</h3>
 
                 <div class="card-tools">
-                  <button class="btn btn-success" data-toggle="modal" data-target="#addNew">
+                  <button class="btn btn-success" @click="newModal">
                     Add new
                     <i class="fas fa-user-plus">
 
@@ -37,7 +37,7 @@
                       <td>{{user.type | upText}}</td>
                       <td>{{user.created_at| myDate}}</td>
                       <td>
-                        <a href="#">
+                        <a href="#" @click="editModal(user)">
                           <i class="fa fa-edit">
                           </i>
                         </a>
@@ -134,6 +134,16 @@
         }
       },
       methods: {
+        newModal(){
+          this.form.reset();
+          $('#addNew').modal('show');
+        },
+        editModal(user){
+        this.form.reset();
+        $('#addNew').modal('show');
+        $('#addNew').title('show');
+        this.form.fill(user);
+        },
         loadUsers(){ 
           axios.get("api/user").then(({data})=>(this.users=data.data));
         },
