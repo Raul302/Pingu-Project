@@ -64,23 +64,22 @@
                     <form class="form-horizontal">
                       <div class="form-group">
                         <label for="inputName" class="col-sm-2 control-label">Name</label>
-
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputName" placeholder="Name">
+                          <input type="text"  v-model="form.name" class="form-control" id="name" placeholder="Name">
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="inputEmail" class="col-sm-2 control-label">Email</label>
 
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                          <input type="email"  v-model="form.email" class="form-control" id="inputEmail" placeholder="Email">
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="inputName2" class="col-sm-2 control-label">Photo</label>
 
                         <div class="col-sm-10">
-                          <input type="file" id="inputName2" placeholder="Name">
+                          <input type="file" @change="updateProfile" id="inputName2" placeholder="Name">
                         </div>
                       </div>
                       <div class="form-group">
@@ -108,7 +107,7 @@
                       </div>
                       <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                          <button type="submit" class="btn btn-danger">Submit</button>
+                          <button @click.prevent="updateInfo" type="submit" class="btn btn-danger">Submit</button>
                         </div>
                       </div>
                     </form>
@@ -123,8 +122,46 @@
 
 <script>
     export default {
+      data(){
+        return {
+          form: new Form({
+            id:'',
+            name:'',
+            email:'',
+            password:'',
+            type:'',
+            bio:'',
+            photo:''
+          })
+        }
+      },
         mounted() {
             console.log('Component mounted.')
+        },
+        methods :{
+          updateInfo()
+          {
+            this.form.put('api/profile/')
+            .then(()=>{
+
+            })
+            .catch(()=>{
+
+            });
+          },
+          updateProfile(e){
+            let file = e.target.files[0];
+            let reader = new FileReader();
+            reader.onload = (file)=>{
+              // console.log('RESULT',reader.result)
+              this.form.photo = reader.result;
+            }
+            reader.readAsDataURL(file);
+          }
+        },
+        created()
+        {
+          axios.get('api/profile').then(({data})=>(this.form.fill(data)))
         }
     }
 </script>
