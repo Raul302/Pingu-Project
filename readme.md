@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://thumbs.subefotos.com/abeadc1a67c8308aaa56e27c7ef56ed2o.jpg width="400px">
+  <img src="https://thumbs.subefotos.com/abeadc1a67c8308aaa56e27c7ef56ed2o.jpg" width="400px">
 </div>
 <div align="center">
   <img src="https://res.cloudinary.com/adonisjs/image/upload/q_100/v1558612869/adonis-readme_zscycu.jpg" width="400px">
