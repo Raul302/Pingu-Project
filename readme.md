@@ -6,7 +6,6 @@
     <h1> + </h1>
 </div>
 <div align="center">
-  <img src="https://firebase.google.com/images/brand-guidelines/logo-standard.png?hl=es-419
-" width="600px">
+  <img src="https://firebase.google.com/images/brand-guidelines/logo-standard.png" width="600px">
 </div>
 
