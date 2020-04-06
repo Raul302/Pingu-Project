@@ -5,3 +5,8 @@
 <div align="center">
     <h1> + </h1>
 </div>
+
+<div align="center">
+  <img src="https://firebase.google.com/images/brand-guidelines/logo-standard.png" width="600px">
+</div>
+
