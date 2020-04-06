@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://i.ibb.co/60Qdkt2/Whats-App-Image-2020-04-05-at-22-01-17.jpg" width="400px">
+  <img src="https://i.ibb.co/jTYBKsH/Whats-App-Image-2020-04-05-at-22-removebg-preview.png" width="400px">
 </div>
 <div align="center">
   <img src="https://res.cloudinary.com/adonisjs/image/upload/q_100/v1558612869/adonis-readme_zscycu.jpg" width="400px">
